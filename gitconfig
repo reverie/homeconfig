@@ -1,0 +1,9 @@
+[user]
+	name = Andrew Badr
+	email = andrewbadr+git@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+[color]
+	diff = auto
+	status = auto
+	branch = auto
