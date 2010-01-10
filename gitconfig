@@ -2,7 +2,7 @@
 	name = Andrew Badr
 	email = andrewbadr+git@gmail.com
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /home/andrew/.gitignore
 [color]
 	diff = auto
 	status = auto
