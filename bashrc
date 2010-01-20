@@ -68,7 +68,6 @@ esac
 #    . ~/.bash_aliases
 #fi
 
-alias ls='ls -G'
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
