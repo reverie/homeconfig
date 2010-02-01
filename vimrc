@@ -62,7 +62,7 @@ set si ai
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set nu
+set nonu
 
 " use apostrophe for anchors
 nnoremap ' `
@@ -72,9 +72,9 @@ nnoremap ` '
 " marks, registers, searches, buffer list
 set viminfo='20,<50,s10,h,%
 
-autocmd FileType html
-  \ setlocal noexpandtab
-autocmd FileType javascript
-  \ setlocal noexpandtab
-autocmd FileType htmldjango
-  \ setlocal noexpandtab
+"autocmd FileType html
+"  \ setlocal noexpandtab
+"autocmd FileType javascript
+"  \ setlocal noexpandtab
+"autocmd FileType htmldjango
+"  \ setlocal noexpandtab

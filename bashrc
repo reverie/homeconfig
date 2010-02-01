@@ -119,4 +119,12 @@ alias i='ssh ianab'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 export DJANGO_SETTINGS_MODULE=settings
-alias ack='ack-grep'
+alias triggit="ssh -p 30576 andrew@a.triggit.com"
+
+if command -v ack > /dev/null; then
+    :
+else
+    echo "setting alias"
+    alias ack="ack-grep"
+fi
+

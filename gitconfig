@@ -2,8 +2,10 @@
 	name = Andrew Badr
 	email = andrewbadr+git@gmail.com
 [core]
-	excludesfile = /home/andrew/.gitignore
+	excludesfile = /Users/andrewbadr/.gitignore
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+[clean]
+    requireForce = true
