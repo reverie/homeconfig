@@ -78,3 +78,6 @@ set viminfo='20,<50,s10,h,%
 "  \ setlocal noexpandtab
 "autocmd FileType htmldjango
 "  \ setlocal noexpandtab
+
+autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosi
+
