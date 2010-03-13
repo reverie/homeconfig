@@ -88,9 +88,8 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export PS1='\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\]: '
-function c { git checkout $1; }
-function m { svn merge -c $1 ../../trunk; }
-function b { git branch $1; }
+function c { git checkout $@; }
+function b { git branch $@; }
 export SVN_EDITOR=vim
 #export DJANGO_SETTINGS_MODULE=disqus.settings
 #export PYTHONPATH=/Users/andrewbadr/Desktop/disqus/trunk/
