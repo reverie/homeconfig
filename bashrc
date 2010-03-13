@@ -126,3 +126,4 @@ else
     alias ack="ack-grep"
 fi
 
+function ve { source ~/envs/$1/bin/activate; }
