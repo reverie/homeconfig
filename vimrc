@@ -44,7 +44,7 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned
-set mouse= " Disable mouse
+set mouse=n
 set scrolloff=3
 
 " Source a global configuration file if available
