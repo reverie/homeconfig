@@ -128,6 +128,7 @@ fi
 function ve { source ~/envs/$1/bin/activate; }
 #function cd { echo `which cd` $@; echo `pwd` > ~/.bash_dir; }
 alias setd='echo `pwd` > ~/.bash_dir'
+alias getd='cd `cat ~/.bash_dir`'
 if [ -f ~/.bash_dir ]; then
-    cd `cat ~/.bash_dir`
+    getd
 fi
