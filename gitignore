@@ -3,3 +3,4 @@ localsettings.py
 *.sqlite
 .DS_store
 *.swp
+debug_settings.py

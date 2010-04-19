@@ -81,3 +81,6 @@ set viminfo='20,<50,s10,h,%
 
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosi
 
+" fancy window switching
+nmap <c-h> <c-w>h<c-w><Bar>
+nmap <c-l> <c-w>l<c-w><Bar>
