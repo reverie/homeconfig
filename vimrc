@@ -88,4 +88,5 @@ nmap <c-l> <c-w>l<c-w><Bar>
 inoremap kj <Esc>
 filetype plugin on
 set completeopt=menu,longest
-inoremap . .<C-X><C-O>
+autocmd FileType python
+    \  inoremap . .<C-X><C-O>
