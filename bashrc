@@ -132,3 +132,7 @@ alias getd='cd `cat ~/.bash_dir`'
 if [ -f ~/.bash_dir ]; then
     getd
 fi
+
+if [ -f ~/.local_bashrc ]; then
+    source ~/.local_bashrc
+fi
