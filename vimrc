@@ -104,4 +104,3 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 set backspace=2         " more powerful backspacing
-
