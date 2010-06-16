@@ -44,7 +44,7 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned
-set mouse=n
+set mouse=
 set scrolloff=3
 
 " Source a global configuration file if available
@@ -88,12 +88,12 @@ nmap <c-l> <c-w>l<c-w><Bar>
 inoremap kj <Esc>
 filetype plugin on
 set completeopt=menu,longest
-autocmd FileType python inoremap . .<C-X><C-O>
+"autocmd FileType python inoremap . .<C-X><C-O>
 
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
-nnoremap zz f{zf%
+nnoremap z{ f{zf%
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

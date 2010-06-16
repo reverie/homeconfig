@@ -4,3 +4,4 @@ localsettings.py
 .DS_store
 *.swp
 debug_settings.py
+pip-log.txt
