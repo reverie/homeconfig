@@ -85,7 +85,7 @@ autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosi
 nmap <c-h> <c-w>h<c-w><Bar>
 nmap <c-l> <c-w>l<c-w><Bar>
 
-inoremap kj <Esc>
+"inoremap kj <Esc> " can't insert k as last letter :|
 filetype plugin on
 set completeopt=menu,longest
 "autocmd FileType python inoremap . .<C-X><C-O>

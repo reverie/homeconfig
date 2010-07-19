@@ -136,3 +136,9 @@ fi
 if [ -f ~/.local_bashrc ]; then
     source ~/.local_bashrc
 fi
+
+function fbcssh { ssh -i ~/aws/flybychat-west.pem ubuntu@$1; }
+function fbcfab { fab -i ~/aws/flybychat-west.pem -u ubuntu -H $1 ${@:2}; }
+alias fabproddep1="fab -i ~/aws/flybychat-west.pem stage_production all_hosts deploy_prep_new_release"
+function fabproddep2 { fab -i ~/aws/flybychat-west.pem stage_production all_hosts deploy_activate_release:$1; }
+
