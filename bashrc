@@ -141,4 +141,12 @@ function fbcssh { ssh -i ~/aws/flybychat-west.pem ubuntu@$1; }
 function fbcfab { fab -i ~/aws/flybychat-west.pem -u ubuntu -H $1 ${@:2}; }
 alias fabproddep1="fab -i ~/aws/flybychat-west.pem stage_production all_hosts deploy_prep_new_release"
 function fabproddep2 { fab -i ~/aws/flybychat-west.pem stage_production all_hosts deploy_activate_release:$1; }
+function fabdep1 { fab -i ~/aws/flybychat-west.pem stage_$1 all_hosts deploy_prep_new_release; }
+function fabdep2 { fab -i ~/aws/flybychat-west.pem stage_$1 all_hosts deploy_activate_release:$2; }
 
+# malcolmt's prompt
+e=\\\033
+#export PS1="\n\[$e[35m\].-(\[$e[33m\]\u@\h \[$e[36m\]\t\[$e[35m\])\[$e[0m\]\w\n\[$e[35m\]\\\`-->\[$e[0m\] "
+export PS1="\n\[\033[35m\]\[\033[33m\]\u@\h \[\033[0m\]\w\n\[\033[35m\]\[\033[0m\]: "
+
+alias runserver="python manage.py runserver 0.0.0.0:8000"
