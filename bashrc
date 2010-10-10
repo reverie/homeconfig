@@ -150,3 +150,8 @@ e=\\\033
 export PS1="\n\[\033[35m\]\[\033[33m\]\u@\h \[\033[0m\]\w\n\[\033[35m\]\[\033[0m\]: "
 
 alias runserver="python manage.py runserver 0.0.0.0:8000"
+export WORKON_HOME="$HOME/envs"
+source /opt/local/bin/virtualenvwrapper_bashrc-2.6
+export PIP_RESPECT_VIRTUALENV=true
+
+alias pushzc="workon zerocater && cd ~/code/zerocater && fab -i ~/.ssh/id_rsa stage_production dumb_deploy"
