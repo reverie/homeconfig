@@ -58,7 +58,8 @@ command! -bang -nargs=* Q q<bang> <args>
 command! -bang -nargs=* Wq wq<bang> <args>
 command! -bang -nargs=* WQ wq<bang> <args>
 command! -bang -nargs=* Set set<bang> <args>
-set si ai
+command! -bang -nargs=* Vs vs<bang> <args>
+set smartindent autoindent
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -79,7 +80,7 @@ set viminfo='20,<50,s10,h,%
 "autocmd FileType htmldjango
 "  \ setlocal noexpandtab
 
-autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosi
+autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 
 " fancy window switching
 nmap <c-h> <c-w>h<c-w><Bar>

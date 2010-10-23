@@ -155,3 +155,5 @@ source /opt/local/bin/virtualenvwrapper_bashrc-2.6
 export PIP_RESPECT_VIRTUALENV=true
 
 alias pushzc="workon zerocater && cd ~/code/zerocater && fab -i ~/.ssh/id_rsa stage_production dumb_deploy"
+alias south_sm="python manage.py schemamigration core --auto"
+alias south_m="python manage.py migrate"
