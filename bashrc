@@ -153,7 +153,8 @@ alias runserver="python manage.py runserver 0.0.0.0:8000"
 export WORKON_HOME="$HOME/envs"
 export PIP_RESPECT_VIRTUALENV=true
 
-alias pushzc="workon zerocater && cd ~/code/zerocater && fab -i ~/.ssh/id_rsa stage_production dumb_deploy"
+alias pushzc="workon zerocater && cd ~/code/zerocater && fab -u andrew -i ~/.ssh/id_rsa stage_production dumb_deploy"
 alias south_sm="python manage.py schemamigration core --auto"
 alias south_m="python manage.py migrate"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+export PATH=$PATH:~/cmds/

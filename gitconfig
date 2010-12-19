@@ -9,3 +9,5 @@
 	branch = auto
 [clean]
     requireForce = true
+[alias]
+	diffall = !sh git-diffall
