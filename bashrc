@@ -95,7 +95,6 @@ export SVN_EDITOR=vim
 #export PYTHONPATH=/Users/andrewbadr/Desktop/disqus/trunk/
 #function mfb { svn merge -c $2 /Users/andrewbadr/Desktop/disqus/branches/$1; }
 #alias branchdiff="svn diff http://mass.disqus.net/svn/disqus/branches/stable/ http://mass.disqus.net/svn/disqus/trunk/"
-alias setpp="export PYTHONPATH=`pwd`:`pwd`/django_root"
 #alias svnup="svn up /Users/andrewbadr/Desktop/disqus"
 #alias trunk="cd /Users/andrewbadr/Desktop/disqus/trunk/disqus"
 #alias stable="cd /Users/andrewbadr/Desktop/disqus/branches/stable/disqus"
@@ -133,10 +132,6 @@ if [ -f ~/.bash_dir ]; then
     getd
 fi
 
-if [ -f ~/.local_bashrc ]; then
-    source ~/.local_bashrc
-fi
-
 function fbcssh { ssh -i ~/aws/flybychat-west.pem ubuntu@$1; }
 function fbcfab { fab -i ~/aws/flybychat-west.pem -u ubuntu -H $1 ${@:2}; }
 alias fabproddep1="fab -i ~/aws/flybychat-west.pem stage_production all_hosts deploy_prep_new_release"
@@ -154,7 +149,17 @@ export WORKON_HOME="$HOME/envs"
 export PIP_RESPECT_VIRTUALENV=true
 
 alias pushzc="workon zerocater && cd ~/code/zerocater && fab -u andrew -i ~/.ssh/id_rsa stage_production dumb_deploy"
-alias south_sm="python manage.py schemamigration core --auto"
+alias push="fab stage_production dumb_deploy"
+alias south_sm="python manage.py schemamigration main --auto"
+function south_sm { python manage.py schemamigration $1 --auto; }
 alias south_m="python manage.py migrate"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+alias rsync_backups='rsync -avzr andrew@zerocater.com:/project/zerocater/db_backups ~/backups/zc_dumps/'
 export PATH=$PATH:~/cmds/
+alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
+# killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
+
+if [ -f ~/.local_bashrc ]; then
+    source ~/.local_bashrc
+fi
+
