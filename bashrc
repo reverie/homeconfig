@@ -90,14 +90,8 @@ fi
 export PS1='\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\]: '
 function c { git checkout $@; }
 function b { git branch $@; }
+export EDITOR=vim
 export SVN_EDITOR=vim
-#export DJANGO_SETTINGS_MODULE=disqus.settings
-#export PYTHONPATH=/Users/andrewbadr/Desktop/disqus/trunk/
-#function mfb { svn merge -c $2 /Users/andrewbadr/Desktop/disqus/branches/$1; }
-#alias branchdiff="svn diff http://mass.disqus.net/svn/disqus/branches/stable/ http://mass.disqus.net/svn/disqus/trunk/"
-#alias svnup="svn up /Users/andrewbadr/Desktop/disqus"
-#alias trunk="cd /Users/andrewbadr/Desktop/disqus/trunk/disqus"
-#alias stable="cd /Users/andrewbadr/Desktop/disqus/branches/stable/disqus"
 alias .="cd .."
 alias s="git status"
 alias d="git diff"
@@ -105,13 +99,7 @@ alias dv="git diff | vim -"
 alias build="ssh build@mass.disqus.net"
 alias restart='sudo apache2ctl restart'
 alias apacheconf='sudo vim /etc/apache2/sites-enabled/ianab'
-#function getpo { 
-#    trunk; 
-#    cd locale/$1/LC_MESSAGES;
-#    scp andrew@nova.disqus.net:/www/disqus.com/current/disqus/locale/$1/LC_MESSAGES/django.po .;
-#}
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
-#export PATH=$PATH:/Users/andrewbadr/django/django_svn_trunk/django/bin
 alias i='ssh ianab'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
@@ -124,8 +112,6 @@ else
     alias ack="ack-grep"
 fi
 
-function ve { source ~/envs/$1/bin/activate; }
-#function cd { echo `which cd` $@; echo `pwd` > ~/.bash_dir; }
 alias setd='echo `pwd` > ~/.bash_dir'
 alias getd='cd `cat ~/.bash_dir`'
 if [ -f ~/.bash_dir ]; then
