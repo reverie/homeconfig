@@ -1,0 +1,7 @@
+# Typical server
+#source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=/envs
+
+# Local machine
+#source /usr/local/bin/virtualenvwrapper.sh
+#export PATH=$PATH:/Users/andrewbadr/.gem/ruby/1.8/bin
