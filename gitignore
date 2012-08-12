@@ -6,3 +6,4 @@ localsettings.py
 debug_settings.py
 pip-log.txt
 *.DS_Store
+.sass-cache

@@ -5,8 +5,8 @@ set go-=r
 set go-=L
 set bg=dark
 set nofu
-"set fu "doesn't work, yet makes gvim think it's fu, so do:
-au GUIEnter * set fu 
+""set fu "doesn't work, yet makes gvim think it's fu, so do:
+"au GUIEnter * set fu 
 
 if &background == "dark"
     hi normal guibg=black

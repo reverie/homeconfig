@@ -95,6 +95,9 @@ export SVN_EDITOR=vim
 alias .="cd .."
 alias s="git status"
 alias d="git diff"
+alias l="git log"
+alias gp="git pull"
+alias gpu="git push"
 alias dv="git diff | vim -"
 alias build="ssh build@mass.disqus.net"
 alias restart='sudo apache2ctl restart'
@@ -139,6 +142,9 @@ export PATH=$PATH:~/cmds/
 alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
 # killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
 alias init="touch __init__.py"
+
+# Find and replace: TODO make fxn
+#perl -e "s/FIND/REPLACE/g;" -pi $(find path/to/DIRECTORY -type f)
 
 if [ -f ~/.local_bashrc ]; then
     source ~/.local_bashrc

@@ -81,10 +81,14 @@ set viminfo='20,<50,s10,h,%
 "  \ setlocal noexpandtab
 
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
+autocmd FileType coffee set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
+autocmd FileType html set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 
 " fancy window switching
-nmap <c-h> <c-w>h<c-w><Bar>
-nmap <c-l> <c-w>l<c-w><Bar>
+"nmap <c-h> <c-w>h<c-w><Bar>
+"nmap <c-l> <c-w>l<c-w><Bar>
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
 
 "inoremap kj <Esc> " can't insert k as last letter :|
 filetype plugin on
@@ -103,6 +107,12 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+augroup filetypedetect 
+  au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
+augroup END 
+au BufNewFile,BufRead *.less set filetype=less
+
 
 set backspace=2         " more powerful backspacing
 
