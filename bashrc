@@ -115,11 +115,20 @@ else
     alias ack="ack-grep"
 fi
 
+# Get/set default working directory
 alias setd='echo `pwd` > ~/.bash_dir'
 alias getd='cd `cat ~/.bash_dir`'
 if [ -f ~/.bash_dir ]; then
     getd
 fi
+
+# Get/set default virutalenv
+alias setve='echo $VIRTUALENVWRAPPER_HOOK_DIR/`showvirtualenv` > ~/.bash_ve'
+alias getve='source `cat ~/.bash_ve`/bin/activate'
+# Broken due to some interaction with virtualenvwrapper:
+#if [ -f ~/.bash_ve ]; then
+#    getve
+#fi
 
 function fbcssh { ssh -i ~/aws/flybychat-west.pem ubuntu@$1; }
 function fbcfab { fab -i ~/aws/flybychat-west.pem -u ubuntu -H $1 ${@:2}; }
@@ -129,16 +138,16 @@ function fabdep1 { fab -i ~/aws/flybychat-west.pem stage_$1 all_hosts deploy_pre
 function fabdep2 { fab -i ~/aws/flybychat-west.pem stage_$1 all_hosts deploy_activate_release:$2; }
 
 export PS1="\n\[\033[35m\]\[\033[33m\]\u@\h \[\033[0m\]\w\n\[\033[35m\]\[\033[0m\]: "
-alias runserver="python manage.py runserver 0.0.0.0:8000"
+alias runserver="./manage.py runserver 0.0.0.0:8000"
 export WORKON_HOME="$HOME/envs"
 export PIP_RESPECT_VIRTUALENV=true
 
-alias push="git push && fab stage_production simple_deploy"
-alias south_sm="python manage.py schemamigration main --auto"
-function south_sm { python manage.py schemamigration $1 --auto; }
-alias south_m="python manage.py migrate"
+alias push="fab stage_production simple_deploy"
+alias south_sm="./manage.py schemamigration main --auto"
+function south_sm { ./manage.py schemamigration $1 --auto; }
+alias south_m="./manage.py migrate"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-export PATH=$PATH:~/cmds/
+export PATH=$PATH:~/cmds
 alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
 # killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
 alias init="touch __init__.py"
@@ -149,4 +158,3 @@ alias init="touch __init__.py"
 if [ -f ~/.local_bashrc ]; then
     source ~/.local_bashrc
 fi
-

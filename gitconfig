@@ -11,3 +11,5 @@
     requireForce = true
 [alias]
 	diffall = !sh git-diffall
+[push]
+	default = upstream
