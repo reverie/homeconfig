@@ -5,3 +5,10 @@
 # Local machine
 #source /usr/local/bin/virtualenvwrapper.sh
 #export PATH=$PATH:/Users/andrewbadr/.gem/ruby/1.8/bin
+
+
+# Load saved virtualenv -- must come after loading VEWrapper
+#if [ -f ~/.bash_ve ]; then
+#    getve
+#fi
+

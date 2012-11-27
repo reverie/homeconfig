@@ -1,4 +1,5 @@
 call pathogen#infect()
+call pathogen#helptags()
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc")
@@ -39,17 +40,23 @@ nnoremap ` '
 " marks, registers, searches, buffer list
 set viminfo='20,<50,s10,h,%
 
-au BufNewFile,BufRead *.less set filetype=less
+"au BufNewFile,BufRead *.less set filetype=less
 
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 autocmd FileType coffee set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
+autocmd FileType htmldjango set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType css set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType less set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 
-" easy
+" easy window moving
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+
+" swap words with `gw`
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
 set completeopt=menu,longest
 
@@ -60,16 +67,9 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-
 augroup filetypedetect 
   au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
 augroup END 
 
-
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=0

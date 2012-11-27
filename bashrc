@@ -43,11 +43,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -125,10 +120,6 @@ fi
 # Get/set default virutalenv
 alias setve='echo $VIRTUALENVWRAPPER_HOOK_DIR/`showvirtualenv` > ~/.bash_ve'
 alias getve='source `cat ~/.bash_ve`/bin/activate'
-# Broken due to some interaction with virtualenvwrapper:
-#if [ -f ~/.bash_ve ]; then
-#    getve
-#fi
 
 function fbcssh { ssh -i ~/aws/flybychat-west.pem ubuntu@$1; }
 function fbcfab { fab -i ~/aws/flybychat-west.pem -u ubuntu -H $1 ${@:2}; }
@@ -143,6 +134,7 @@ export WORKON_HOME="$HOME/envs"
 export PIP_RESPECT_VIRTUALENV=true
 
 alias push="fab stage_production simple_deploy"
+alias test="./manage.py test main"
 alias south_sm="./manage.py schemamigration main --auto"
 function south_sm { ./manage.py schemamigration $1 --auto; }
 alias south_m="./manage.py migrate"
