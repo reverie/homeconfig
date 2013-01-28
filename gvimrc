@@ -1,4 +1,6 @@
-set guifont=Monaco:h9.00
+set guifont=Monaco:h10
+set noanti
+
 colorscheme peaksea
 set go-=T
 set go-=r

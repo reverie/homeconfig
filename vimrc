@@ -44,10 +44,13 @@ set viminfo='20,<50,s10,h,%
 
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 autocmd FileType coffee set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
-autocmd FileType html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
-autocmd FileType htmldjango set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
+autocmd FileType html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent inde=
+autocmd FileType htmldjango set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent inde=
+autocmd FileType django set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent inde=
 autocmd FileType css set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType less set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
+
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 " easy window moving
 nmap <c-h> <c-w>h
