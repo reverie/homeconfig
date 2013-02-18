@@ -83,20 +83,20 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export PS1='\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\]: '
+export EDITOR=vim
+export SVN_EDITOR=vim
 function c { git checkout $@; }
 function b { git branch $@; }
 function f { ack -a -l $@ | ack -v migrations | ack -v .sqlite; }
-export EDITOR=vim
-export SVN_EDITOR=vim
+alias ackk="ack --coffee"
 alias .="cd .."
 alias s="git status"
 alias d="git diff"
 alias dc="git diff --cached"
+alias dv="git diff | vim -"
 alias l="git log"
 alias gp="git pull"
 alias gpu="git push"
-alias dv="git diff | vim -"
-alias apacheconf='sudo vim /etc/apache2/sites-enabled/ianab'
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
 alias i='mosh ianab'
 export CLICOLOR=1
@@ -133,7 +133,7 @@ export WORKON_HOME="$HOME/envs"
 export PIP_RESPECT_VIRTUALENV=true
 
 alias deploy="fab deploy"
-alias test="./manage.py test main"
+alias testm="./manage.py test main"
 alias south_sm="./manage.py schemamigration main --auto"
 function south_sm { ./manage.py schemamigration $1 --auto; }
 alias south_m="./manage.py migrate"

@@ -1,3 +1,4 @@
 --color
 --sort-files
 --type-set=coffee=.coffee
+--type-set=less=.less
