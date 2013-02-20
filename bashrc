@@ -75,13 +75,6 @@ fi
 #alias la='ls -A'
 #alias l='ls -CF'
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
 export PS1='\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\]: '
 export EDITOR=vim
 export SVN_EDITOR=vim
@@ -120,13 +113,6 @@ fi
 alias setve='echo $VIRTUALENVWRAPPER_HOOK_DIR/`showvirtualenv` > ~/.bash_ve'
 alias getve='source `cat ~/.bash_ve`/bin/activate'
 
-function fbcssh { ssh -i ~/aws/flybychat-west.pem ubuntu@$1; }
-function fbcfab { fab -i ~/aws/flybychat-west.pem -u ubuntu -H $1 ${@:2}; }
-alias fabproddep1="fab -i ~/aws/flybychat-west.pem stage_production all_hosts deploy_prep_new_release"
-function fabproddep2 { fab -i ~/aws/flybychat-west.pem stage_production all_hosts deploy_activate_release:$1; }
-function fabdep1 { fab -i ~/aws/flybychat-west.pem stage_$1 all_hosts deploy_prep_new_release; }
-function fabdep2 { fab -i ~/aws/flybychat-west.pem stage_$1 all_hosts deploy_activate_release:$2; }
-
 export PS1="\n\[\033[35m\]\[\033[33m\]\u@\h \[\033[0m\]\w\n\[\033[35m\]\[\033[0m\]: "
 alias runserver="./manage.py runserver 0.0.0.0:8000"
 export WORKON_HOME="$HOME/envs"
@@ -138,7 +124,7 @@ alias south_sm="./manage.py schemamigration main --auto"
 function south_sm { ./manage.py schemamigration $1 --auto; }
 alias south_m="./manage.py migrate"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-export PATH=$PATH:~/cmds
+export PATH=$PATH:~/cmds:~/bin
 alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
 # killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
 alias init="touch __init__.py"
