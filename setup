@@ -6,7 +6,6 @@ import subprocess
 def here(*args): 
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), *args)
 
-
 def home(*args):
     home = os.getenv("HOME")
     return os.path.join(home, *args)
@@ -21,6 +20,8 @@ def main():
         src = here(filename)
         dst = home('.' + filename)
         subprocess.call("cp %s %s" % (src, dst), shell=True)
+    subprocess.call("mkdir -p %s" % home('.vim', 'view'), shell=True)
+    subprocess.call("mkdir -p %s" % home('.ssh'), shell=True)
 
 if __name__ == '__main__':
     main()
