@@ -82,7 +82,7 @@ function c { git checkout $@; }
 function b { git branch $@; }
 function f { ack -a -l $@ | ack -v migrations | ack -v .sqlite; }
 alias ackk="ack --coffee"
-alias .="cd .."
+alias j="cd .."
 alias s="git status"
 alias d="git diff"
 alias dc="git diff --cached"
