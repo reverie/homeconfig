@@ -7,6 +7,8 @@
 #export PATH=$PATH:/Users/andrewbadr/.gem/ruby/1.8/bin
 
 
+export PIP_DOWNLOAD_CACHE=~/.pip_download_cache/
+
 # Load saved virtualenv -- must come after loading VEWrapper
 #if [ -f ~/.bash_ve ]; then
 #    getve

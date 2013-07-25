@@ -2,3 +2,5 @@
 --sort-files
 --type-set=coffee=.coffee
 --type-set=less=.less
+--type-set=sass=.scss
+--ignore-dir=_static
