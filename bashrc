@@ -93,6 +93,7 @@ alias gpu="git push"
 alias gpgpu="git pull --rebase && git push"
 alias cam="git commit -am"
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
+alias virtualboxsucks='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 alias i='mosh ianab'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
@@ -112,7 +113,7 @@ if [ -f ~/.bash_dir ]; then
 fi
 
 # Get/set default virutalenv
-alias setve='echo $VIRTUALENVWRAPPER_HOOK_DIR/`showvirtualenv` > ~/.bash_ve'
+alias setve='echo $VIRTUAL_ENV > ~/.bash_ve'
 alias getve='source `cat ~/.bash_ve`/bin/activate'
 
 export PS1="\n\[\033[35m\]\[\033[33m\]\u@\h \[\033[0m\]\w\n\[\033[35m\]\[\033[0m\]: "
