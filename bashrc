@@ -97,7 +97,6 @@ alias virtualboxsucks='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 alias i='mosh ianab'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
-export DJANGO_SETTINGS_MODULE=settings
 
 if command -v ack > /dev/null; then
     :
