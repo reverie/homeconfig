@@ -92,6 +92,7 @@ alias gp="git pull --rebase"
 alias gpu="git push"
 alias gpgpu="git pull --rebase && git push"
 alias cam="git commit -am"
+alias aa="git add -A :/"
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
 alias virtualboxsucks='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 alias i='mosh ianab'
@@ -137,3 +138,6 @@ alias init="touch __init__.py"
 if [ -f ~/.local_bashrc ]; then
     source ~/.local_bashrc
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

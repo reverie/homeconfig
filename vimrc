@@ -49,6 +49,7 @@ autocmd FileType htmldjango set tabstop=2 softtabstop=2 shiftwidth=2 expandtab n
 autocmd FileType django set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent inde=
 autocmd FileType css set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType less set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
+autocmd FileType cabal set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
