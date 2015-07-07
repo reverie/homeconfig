@@ -6,9 +6,6 @@
 #source /usr/local/bin/virtualenvwrapper.sh
 #export PATH="$HOME/Library/Haskell/bin:$PATH"
 
-
-export PIP_DOWNLOAD_CACHE=~/.pip_download_cache/
-
 # Load saved virtualenv -- must come after loading VEWrapper
 #if [ -f ~/.bash_ve ]; then
 #    getve
