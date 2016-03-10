@@ -129,7 +129,7 @@ function south_sm { ./manage.py schemamigration $1 --auto; }
 alias south_m="./manage.py migrate"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 export PATH=$PATH:~/cmds:~/bin
-alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
+#alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
 # killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
 alias init="touch __init__.py"
 

@@ -1,9 +1,11 @@
 *.pyc
 localsettings.py
 *.sqlite
+*.sqlite3
 .DS_store
 *.swp
 debug_settings.py
 pip-log.txt
 *.DS_Store
 .sass-cache
+worknotes

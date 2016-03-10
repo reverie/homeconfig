@@ -5,6 +5,10 @@
 # Local machine
 #source /usr/local/bin/virtualenvwrapper.sh
 #export PATH="$HOME/Library/Haskell/bin:$PATH"
+#
+#  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#      . $(brew --prefix)/etc/bash_completion
+#  fi
 
 # Load saved virtualenv -- must come after loading VEWrapper
 #if [ -f ~/.bash_ve ]; then
