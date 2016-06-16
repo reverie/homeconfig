@@ -11,7 +11,7 @@ def home(*args):
     return os.path.join(home, *args)
 
 def main():
-    for filename in ['bashrc', 'gitconfig', 'gitignore', 'gvimrc', 'vimrc', 'ackrc']:
+    for filename in ['bashrc', 'gitconfig', 'gitignore', 'gvimrc', 'vimrc', 'ackrc', 'bash_profile']:
         src = here(filename)
         dst = home('.' + filename)
         subprocess.call('rm %s' % dst, shell=True)

@@ -43,6 +43,7 @@ set viminfo='20,<50,s10,h,%
 "au BufNewFile,BufRead *.less set filetype=less
 
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
+autocmd FileType typescript set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 autocmd FileType coffee set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType htmldjango set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent inde=
@@ -52,6 +53,7 @@ autocmd FileType less set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmart
 autocmd FileType cabal set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+au BufNewFile,BufRead *.tag setlocal ft=javascript
 
 " easy window moving
 nmap <c-h> <c-w>h
