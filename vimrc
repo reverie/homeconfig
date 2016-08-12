@@ -40,7 +40,10 @@ nnoremap ` '
 " marks, registers, searches, buffer list
 set viminfo='20,<50,s10,h,%
 
-"au BufNewFile,BufRead *.less set filetype=less
+au BufNewFile,BufRead *.elm set filetype=elm
+au BufNewFile,BufRead *.tsx set filetype=typescript
+let g:syntastic_typescript_tsc_args = "--jsx react"
+
 
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 autocmd FileType typescript set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
@@ -51,6 +54,7 @@ autocmd FileType django set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosma
 autocmd FileType css set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType less set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType cabal set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
+autocmd FileType elm set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 au BufNewFile,BufRead *.tag setlocal ft=javascript

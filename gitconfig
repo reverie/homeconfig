@@ -12,4 +12,4 @@
 [alias]
 	diffall = !sh git-diffall
 [push]
-	default = upstream
+	default = simple
