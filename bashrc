@@ -128,7 +128,7 @@ alias south_sm="./manage.py schemamigration main --auto"
 function south_sm { ./manage.py schemamigration $1 --auto; }
 alias south_m="./manage.py migrate"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-export PATH=$PATH:~/cmds:~/bin
+export PATH=$PATH:~/cmds:~/bin:~/.local/bin
 #alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
 # killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
 alias init="touch __init__.py"
@@ -145,3 +145,7 @@ alias lsd="ls -d  .*/ */"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
