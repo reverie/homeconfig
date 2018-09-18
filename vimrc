@@ -44,6 +44,9 @@ au BufNewFile,BufRead *.elm set filetype=elm
 au BufNewFile,BufRead *.tsx set filetype=typescript
 let g:syntastic_typescript_tsc_args = "--jsx react"
 
+" https://github.com/scrooloose/syntastic/issues/341
+let g:syntastic_always_populate_loc_list = 1
+
 
 autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 autocmd FileType typescript set tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
@@ -53,6 +56,7 @@ autocmd FileType htmldjango set tabstop=2 softtabstop=2 shiftwidth=2 expandtab n
 autocmd FileType django set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent inde=
 autocmd FileType css set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType less set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
+autocmd FileType scss set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType cabal set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 autocmd FileType elm set tabstop=2 softtabstop=2 shiftwidth=2 expandtab nosmartindent
 
@@ -83,3 +87,11 @@ augroup END
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=0
+
+" https://github.com/scrooloose/nerdtree
+" How can I open a NERDTree automatically when vim starts up?
+"autocmd vimenter * NERDTree
+"autocmd vimenter * wincmd p
+" How can I close vim if the only window left open is a NERDTree?
+" removed bc it freeze/crashes vim
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

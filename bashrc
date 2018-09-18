@@ -88,7 +88,7 @@ alias d="git diff"
 alias dc="git diff --cached"
 alias dv="git diff | vim -"
 alias l="git log"
-alias gp="git pull --rebase"
+alias gp="git pull"
 alias gpu="git push"
 alias gpgpu="git pull --rebase && git push"
 alias cam="git commit -am"
@@ -114,7 +114,7 @@ if [ -f ~/.bash_dir ]; then
 fi
 
 # Get/set default virutalenv
-alias setve='echo $VIRTUAL_ENV > ~/.bash_ve'
+alias setve='echo $VIRTUAL_ENV | xargs > ~/.bash_ve' # xargs trims whitespace :}
 alias getve='source `cat ~/.bash_ve`/bin/activate'
 
 export PS1="\n\[\033[35m\]\[\033[33m\]\u@\h \[\033[0m\]\w\n\[\033[35m\]\[\033[0m\]: "
@@ -145,3 +145,6 @@ alias lsd="ls -d  .*/ */"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+. /Users/andrew/torch/install/bin/torch-activate

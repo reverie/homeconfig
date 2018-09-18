@@ -3,4 +3,6 @@
 --type-set=coffee=.coffee
 --type-set=less=.less
 --type-set=sass=.scss
+--type-set=typescript=.ts,.tsx
+--type-set=ts=.ts,.tsx
 --ignore-dir=_static

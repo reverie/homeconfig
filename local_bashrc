@@ -9,9 +9,14 @@
 #  if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #      . $(brew --prefix)/etc/bash_completion
 #  fi
+#
+# Prefer homebrew to system installs
+#export PATH=/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Load saved virtualenv -- must come after loading VEWrapper
-#if [ -f ~/.bash_ve ]; then
+#if [ -n ~/.bash_ve ]; then
 #    getve
 #fi
+
+
 
