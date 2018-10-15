@@ -135,6 +135,8 @@ alias init="touch __init__.py"
 
 # Find and replace: TODO make fxn
 #perl -e "s/FIND/REPLACE/g;" -pi $(find path/to/DIRECTORY -type f)
+# grep -rl 'FIND' ./ | LANG=C xargs sed -i '' 's/FIND/REPLACE/g'
+# you can also use `ack -l`
 
 if [ -f ~/.local_bashrc ]; then
     source ~/.local_bashrc
@@ -151,3 +153,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
