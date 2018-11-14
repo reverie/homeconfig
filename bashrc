@@ -80,8 +80,6 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 function c { git checkout $@; }
 function b { git branch $@; }
-function f { ack -a -l $@ | ack -v migrations | ack -v .sqlite; }
-alias ackk="ack --coffee"
 alias j="cd .."
 alias s="git status"
 alias d="git diff"
@@ -90,13 +88,9 @@ alias dv="git diff | vim -"
 alias l="git log"
 alias gp="git pull"
 alias gpu="git push"
-alias gpgpu="git pull --rebase && git push"
 alias cam="git commit -am"
-alias aa="git add -A :/"
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
 alias virtualboxsucks='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
-alias i='mosh ianab'
-alias dokku='mosh dokku'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
@@ -122,16 +116,10 @@ alias runserver="./manage.py runserver 0.0.0.0:8000"
 export WORKON_HOME="$HOME/envs"
 export PIP_RESPECT_VIRTUALENV=true
 
-alias deploy="fab deploy"
-alias testm="./manage.py test main"
-alias south_sm="./manage.py schemamigration main --auto"
-function south_sm { ./manage.py schemamigration $1 --auto; }
-alias south_m="./manage.py migrate"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 export PATH=$PATH:~/cmds:~/bin:~/.local/bin
 #alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
 # killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
-alias init="touch __init__.py"
 
 # Find and replace: TODO make fxn
 #perl -e "s/FIND/REPLACE/g;" -pi $(find path/to/DIRECTORY -type f)
@@ -147,8 +135,6 @@ alias lsd="ls -d  .*/ */"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-. /Users/andrew/torch/install/bin/torch-activate
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
