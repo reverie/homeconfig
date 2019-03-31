@@ -118,7 +118,6 @@ export PIP_RESPECT_VIRTUALENV=true
 
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 export PATH=$PATH:~/cmds:~/bin:~/.local/bin
-#alias setpp="export PYTHONPATH=$PYTHONPATH:`pwd`:.."
 # killgrep ps aux | grep fcgi | grep -v grep | awk '{print $2}' | xargs kill
 
 # Find and replace: TODO make fxn
@@ -129,6 +128,21 @@ export PATH=$PATH:~/cmds:~/bin:~/.local/bin
 
 alias push="git push && git push heroku master && heroku run ./manage.py migrate"
 alias lsd="ls -d  .*/ */"
+alias push-to-staging="git push staging HEAD:master"
+alias delete-merged-local-branches="git branch --merged | grep -v master | xargs git branch -d"
+alias delete-merged-remote-branches="git branch -r --merged | grep -v master | grep origin | sed 's/origin\///' | xargs -n 1 git push --delete origin"
+
+
+# From https://stackoverflow.com/a/41598648/
+function pip-save() {
+    for pkg in $@; do
+        pip install "$pkg" && {
+            name="$(pip show "$pkg" | grep Name: | awk '{print $2}')";
+            version="$(pip show "$pkg" | grep Version: | awk '{print $2}')";
+            echo "${name}==${version}" >> requirements.txt;
+        }
+    done
+}
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
