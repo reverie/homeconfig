@@ -1,26 +1,26 @@
-# Typical server
+#export WORKON_HOME=~/envs
 #source /usr/local/bin/virtualenvwrapper.sh
-#export WORKON_HOME=/envs
 
-# Local machine
-#source /usr/local/bin/virtualenvwrapper.sh
-#export PATH="$HOME/Library/Haskell/bin:$PATH"
-#
+# OSX 
+#export PATH=/usr/local/bin:/usr/local/sbin:$PATH"
 #  if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #      . $(brew --prefix)/etc/bash_completion
 #  fi
-#
-# Prefer homebrew to system installs
-#export PATH=/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Ubuntu Desktop
+# alias open='xdg-open &>/dev/null'
+# alias pbcopy='xclip -selection clipboard'
+# alias pbpaste='xclip -selection clipboard -o'
+
+#function hostfile { 
+#    scp $1 root@files.andrewbadr.com:/var/www/html;
+#    echo "File available at http://files.andrewbadr.com/$1";
+#}
 
 # Load saved virtualenv -- must come after loading VEWrapper
-#if [ -n ~/.bash_ve ]; then
+#if [ -s ~/.bash_ve ]; then
 #    getve
 #fi
 
 
 
-# On Ubuntu Desktop
-# alias open='xdg-open &>/dev/null'
-# alias pbcopy='xclip -selection clipboard'
-# alias pbpaste='xclip -selection clipboard -o'

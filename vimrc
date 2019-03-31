@@ -1,6 +1,3 @@
-call pathogen#infect()
-call pathogen#helptags()
-
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc")
   source /etc/vim/vimrc.local
@@ -87,11 +84,3 @@ augroup END
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=0
-
-" https://github.com/scrooloose/nerdtree
-" How can I open a NERDTree automatically when vim starts up?
-"autocmd vimenter * NERDTree
-"autocmd vimenter * wincmd p
-" How can I close vim if the only window left open is a NERDTree?
-" removed bc it freeze/crashes vim
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

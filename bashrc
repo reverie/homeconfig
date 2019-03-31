@@ -103,7 +103,7 @@ fi
 # Get/set default working directory
 alias setd='echo `pwd` > ~/.bash_dir'
 alias getd='cd `cat ~/.bash_dir`'
-if [ -f ~/.bash_dir ]; then
+if [ -s ~/.bash_dir ]; then
     getd
 fi
 
@@ -126,9 +126,6 @@ export PATH=$PATH:~/cmds:~/bin:~/.local/bin
 # grep -rl 'FIND' ./ | LANG=C xargs sed -i '' 's/FIND/REPLACE/g'
 # you can also use `ack -l`
 
-if [ -f ~/.local_bashrc ]; then
-    source ~/.local_bashrc
-fi
 
 alias push="git push && git push heroku master && heroku run ./manage.py migrate"
 alias lsd="ls -d  .*/ */"
@@ -141,3 +138,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVS_HOME="$HOME/.nvs"
 [ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH=/Users/andrew/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
+
+
+if [ -f ~/.local_bashrc ]; then
+    source ~/.local_bashrc
+fi
