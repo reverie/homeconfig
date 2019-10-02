@@ -89,6 +89,7 @@ alias l="git log"
 alias gp="git pull"
 alias gpu="git push"
 alias cam="git commit -am"
+alias gpickaxe="git log -p -S"
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
 alias virtualboxsucks='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 export CLICOLOR=1
