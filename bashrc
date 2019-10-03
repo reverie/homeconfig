@@ -89,7 +89,10 @@ alias l="git log"
 alias gp="git pull"
 alias gpu="git push"
 alias cam="git commit -am"
+alias delete-merged-local-branches="git branch --merged | grep -v master | grep -v staging | xargs git branch -d"
+alias delete-merged-remote-branches="git branch -r --merged | grep -v master | grep -v staging | grep origin | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias gpickaxe="git log -p -S"
+alias gcleanup="c master && delete-merged-local-branches && git remote prune origin && delete-merged-remote-branches"
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
 alias virtualboxsucks='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 export CLICOLOR=1
@@ -130,8 +133,6 @@ export PATH=$PATH:~/cmds:~/bin:~/.local/bin
 alias push="git push && git push heroku master && heroku run ./manage.py migrate"
 alias lsd="ls -d  .*/ */"
 alias push-to-staging="git push staging HEAD:master"
-alias delete-merged-local-branches="git branch --merged | grep -v master | xargs git branch -d"
-alias delete-merged-remote-branches="git branch -r --merged | grep -v master | grep origin | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 
 
 # From https://stackoverflow.com/a/41598648/
