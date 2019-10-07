@@ -129,6 +129,9 @@ export PATH=$PATH:~/cmds:~/bin:~/.local/bin
 # grep -rl 'FIND' ./ | LANG=C xargs sed -i '' 's/FIND/REPLACE/g'
 # you can also use `ack -l`
 
+# Do something (ls) in every directory:
+# find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && ls" \;
+
 
 alias push="git push && git push heroku master && heroku run ./manage.py migrate"
 alias lsd="ls -d  .*/ */"
