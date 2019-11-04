@@ -106,7 +106,7 @@ fi
 
 # Get/set default working directory
 alias setd='echo `pwd` > ~/.bash_dir'
-alias getd='cd `cat ~/.bash_dir`'
+alias getd='cd "`cat ~/.bash_dir`"'
 if [ -s ~/.bash_dir ]; then
     getd
 fi
