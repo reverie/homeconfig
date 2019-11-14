@@ -135,7 +135,7 @@ export PATH=$PATH:~/cmds:~/bin:~/.local/bin
 
 alias push="git push && git push heroku master && heroku run ./manage.py migrate"
 alias lsd="ls -d  .*/ */"
-alias push-to-staging="git push staging HEAD:master"
+alias push-to-staging="git push -f origin HEAD:staging"
 
 
 # From https://stackoverflow.com/a/41598648/
