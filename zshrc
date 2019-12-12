@@ -1,7 +1,7 @@
 export EDITOR=vim
 export SVN_EDITOR=vim
-function c { git checkout $@; }
-function b { git branch $@; }
+alias c="git checkout";
+alias b="git branch";
 alias j="cd .."
 alias s="git status"
 alias d="git diff"
