@@ -14,6 +14,7 @@
 
 #function hostfile { 
 #    scp $1 root@files.andrewbadr.com:/var/www/html;
+#    ssh root@files.andrewbadr.com chmod +r /var/www/html/$1;
 #    echo "File available at http://files.andrewbadr.com/$1";
 #}
 
