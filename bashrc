@@ -89,6 +89,7 @@ alias gpu="git push"
 alias cam="git commit -am"
 alias delete-merged-local-branches="git branch --merged | grep -v master | grep -v staging | xargs git branch -d"
 alias delete-merged-remote-branches="git branch -r --merged | grep -v master | grep -v staging | grep origin | sed 's/origin\///' | xargs -n 1 git push --delete origin"
+function delete-branches-matching { git branch | grep "$@" | xargs git branch -D; }
 alias gpickaxe="git log -p -S"
 alias gcleanup="c master && gp && delete-merged-local-branches && git remote prune origin && delete-merged-remote-branches"
 alias vmwaresucks='sudo "/Library/Application Support/VMware Fusion/boot.sh" --restart'
