@@ -13,3 +13,5 @@
 	diffall = !sh git-diffall
 [push]
 	default = simple
+[init]
+	defaultBranch = main
